@@ -1,0 +1,166 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PLAN-{YYYY}-{#####}",
+ "creation": "2026-05-09 04:01:41.927588",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_titulo",
+  "titulo",
+  "fecha",
+  "periodo",
+  "column_break_1",
+  "estado",
+  "responsable",
+  "section_ventas",
+  "ventas",
+  "total_ventas",
+  "column_break_2",
+  "egresos",
+  "total_egresos",
+  "section_resumen",
+  "saldo",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_titulo",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n General"
+  },
+  {
+   "fieldname": "titulo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "T\u00edtulo",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha",
+   "reqd": 1
+  },
+  {
+   "default": "Mensual",
+   "fieldname": "periodo",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Per\u00edodo",
+   "options": "Diario\nSemanal\nMensual\nTrimestral\nAnual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Borrador",
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Borrador\nConfirmado\nCerrado",
+   "reqd": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "responsable",
+   "fieldtype": "Link",
+   "label": "Responsable",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_ventas",
+   "fieldtype": "Section Break",
+   "label": "Ventas"
+  },
+  {
+   "fieldname": "ventas",
+   "fieldtype": "Table",
+   "label": "Detalle de Ventas",
+   "options": "Detalle de Venta"
+  },
+  {
+   "fieldname": "total_ventas",
+   "fieldtype": "Currency",
+   "label": "Total Ventas",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "egresos",
+   "fieldtype": "Table",
+   "label": "Detalle de Egresos",
+   "options": "Detalle de Egreso"
+  },
+  {
+   "fieldname": "total_egresos",
+   "fieldtype": "Currency",
+   "label": "Total Egresos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_resumen",
+   "fieldtype": "Section Break",
+   "label": "Resumen"
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "label": "Saldo (Ventas - Egresos)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Text Editor",
+   "label": "Observaciones"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-09 04:01:41.927588",
+ "modified_by": "Administrator",
+ "module": "Planilla de Ventas y Egresos",
+ "name": "Planilla de Ventas y Egresos",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "titulo,fecha,estado",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}
