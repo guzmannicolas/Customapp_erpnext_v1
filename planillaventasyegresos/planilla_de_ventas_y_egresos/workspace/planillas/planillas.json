@@ -1,11 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "Ventas vs Egresos",
-   "label": "Ventas vs Egresos"
-  }
- ],
- "content": "[]",
+ "charts": [],
+ "content": "[{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accesos Rapidos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"wqXhLrA9wm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grafico Ventas por Sucursal\",\"col\":3}}]",
  "creation": "2026-05-09 04:02:50.831636",
  "custom_blocks": [],
  "docstatus": 0,
@@ -22,16 +17,16 @@
    "hidden": 0,
    "icon": "octicon octicon-file",
    "is_query_report": 0,
-   "label": "Planillas",
+   "label": "Caja Diaria",
    "link_count": 0,
-   "link_to": "Planilla de Ventas y Egresos",
+   "link_to": "Caja Diaria",
    "link_type": "DocType",
-   "onboard": 0,
+   "onboard": 1,
    "type": "Link"
   }
  ],
- "modified": "2026-05-09 04:02:50.831636",
- "modified_by": "Administrator",
+ "modified": "2026-05-09 22:15:34.214756",
+ "modified_by": "guzmanbrunonicolas@gmail.com",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
  "number_cards": [],
@@ -39,19 +34,30 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Rol Carlos"
+  }
+ ],
  "sequence_id": 1.0,
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "Nueva Planilla",
-   "link_to": "Planilla de Ventas y Egresos",
+   "label": "Nueva Caja",
+   "link_to": "Caja Diaria",
    "type": "DocType"
   },
   {
+   "color": "Grey",
    "doc_view": "List",
-   "label": "Listado de Planillas",
-   "link_to": "Planilla de Ventas y Egresos",
+   "label": "Grafico Ventas por Sucursal",
+   "link_to": "Ventas por Sucursal y D\u00eda",
+   "type": "Report"
+  },
+  {
+   "doc_view": "List",
+   "label": "Listado de Cajas",
+   "link_to": "Caja Diaria",
    "type": "DocType"
   }
  ],

@@ -1,40 +1,42 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PLAN-{YYYY}-{#####}",
- "creation": "2026-05-09 04:01:41.927588",
+ "autoname": "format:CAJA-{####}",
+ "creation": "2026-05-09 00:00:00.000000",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_titulo",
-  "titulo",
+  "section_info",
+  "local",
   "fecha",
-  "periodo",
   "column_break_1",
-  "estado",
   "responsable",
   "section_ventas",
-  "ventas",
-  "total_ventas",
+  "efectivo",
+  "mercado_pago",
+  "tarjetas",
   "column_break_2",
+  "total_ventas",
+  "section_egresos",
   "egresos",
   "total_egresos",
   "section_resumen",
-  "saldo",
+  "saldo_final",
   "observaciones"
  ],
  "fields": [
   {
-   "fieldname": "section_titulo",
+   "fieldname": "section_info",
    "fieldtype": "Section Break",
-   "label": "Informaci\u00f3n General"
+   "label": "Información General"
   },
   {
-   "fieldname": "titulo",
-   "fieldtype": "Data",
+   "fieldname": "local",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "T\u00edtulo",
+   "label": "Local",
+   "options": "Sucursal 1\nSucursal 2\nSucursal 3\nSucursal 4\nSucursal 5\nSucursal 6",
    "reqd": 1
   },
   {
@@ -46,26 +48,8 @@
    "reqd": 1
   },
   {
-   "default": "Mensual",
-   "fieldname": "periodo",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Per\u00edodo",
-   "options": "Diario\nSemanal\nMensual\nTrimestral\nAnual",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "Borrador",
-   "fieldname": "estado",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Estado",
-   "options": "Borrador\nConfirmado\nCerrado",
-   "reqd": 1
   },
   {
    "default": "__user",
@@ -80,10 +64,23 @@
    "label": "Ventas"
   },
   {
-   "fieldname": "ventas",
-   "fieldtype": "Table",
-   "label": "Detalle de Ventas",
-   "options": "Detalle de Venta"
+   "fieldname": "efectivo",
+   "fieldtype": "Currency",
+   "label": "Efectivo"
+  },
+  {
+   "fieldname": "mercado_pago",
+   "fieldtype": "Currency",
+   "label": "Mercado Pago"
+  },
+  {
+   "fieldname": "tarjetas",
+   "fieldtype": "Currency",
+   "label": "Tarjetas"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "total_ventas",
@@ -92,14 +89,15 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
+   "fieldname": "section_egresos",
+   "fieldtype": "Section Break",
+   "label": "Egresos"
   },
   {
    "fieldname": "egresos",
    "fieldtype": "Table",
    "label": "Detalle de Egresos",
-   "options": "Detalle de Egreso"
+   "options": "Detalle Egresos Caja"
   },
   {
    "fieldname": "total_egresos",
@@ -113,9 +111,10 @@
    "label": "Resumen"
   },
   {
-   "fieldname": "saldo",
+   "fieldname": "saldo_final",
    "fieldtype": "Currency",
-   "label": "Saldo (Ventas - Egresos)",
+   "in_list_view": 1,
+   "label": "Saldo Final",
    "read_only": 1
   },
   {
@@ -126,10 +125,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-09 04:01:41.927588",
+ "modified": "2026-05-09 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "Planilla de Ventas y Egresos",
- "name": "Planilla de Ventas y Egresos",
+ "name": "Caja Diaria",
  "owner": "Administrator",
  "permissions": [
   {
@@ -143,24 +142,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "All",
-   "share": 1,
-   "write": 1
   }
  ],
- "search_fields": "titulo,fecha,estado",
+ "search_fields": "local,fecha",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1,
- "track_views": 1
+ "track_changes": 1
 }
