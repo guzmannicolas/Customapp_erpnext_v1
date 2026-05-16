@@ -1,18 +1,14 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Esta Semana</span>\",\"col\":12}},{\"id\":\"weekly\",\"type\":\"custom\",\"data\":{\"col\":12}},{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accesos Rapidos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"wqXhLrA9wm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grafico Ventas por Sucursal\",\"col\":3}}]",
+ "content": "[{\"id\": \"h0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Esta Semana</span>\", \"col\": 12}}, {\"id\": \"nc1\", \"type\": \"number-card\", \"data\": {\"number_card_name\": \"Ventas Esta Semana\", \"col\": 4}}, {\"id\": \"nc2\", \"type\": \"number-card\", \"data\": {\"number_card_name\": \"Egresos Esta Semana\", \"col\": 4}}, {\"id\": \"nc3\", \"type\": \"number-card\", \"data\": {\"number_card_name\": \"Saldo Esta Semana\", \"col\": 4}}, {\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Accesos Rapidos</span>\", \"col\": 12}}, {\"id\": \"s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nueva Caja\", \"col\": 3}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Listado de Cajas\", \"col\": 3}}, {\"id\": \"wqXhLrA9wm\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grafico Ventas por Sucursal\", \"col\": 3}}]",
  "creation": "2026-05-09 04:02:50.831636",
- "custom_blocks": [
-  {
-   "html": "<div id=\"weekly-summary-block\" style=\"padding: 20px; background: #f8f9fa; border-radius: 8px; margin-bottom: 20px;\"><div style=\"text-align: center; margin-bottom: 20px;\"><h5 style=\"margin: 0; color: #666; font-size: 14px;\">RESUMEN DE LA SEMANA</h5><small style=\"color: #999;\" id=\"week-range\"></small></div><div style=\"display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;\"><div style=\"text-align: center;\"><div style=\"font-size: 28px; font-weight: bold; color: #27ae60; margin-bottom: 5px;\" id=\"ventas-total\">$0</div><div style=\"font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;\">Ventas</div></div><div style=\"text-align: center;\"><div style=\"font-size: 28px; font-weight: bold; color: #e74c3c; margin-bottom: 5px;\" id=\"egresos-total\">$0</div><div style=\"font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;\">Egresos</div></div><div style=\"text-align: center;\"><div style=\"font-size: 28px; font-weight: bold; color: #3498db; margin-bottom: 5px;\" id=\"saldo-neto\">$0</div><div style=\"font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;\">Saldo Neto</div></div></div><div style=\"margin-top: 15px; text-align: center;\"><small style=\"color: #999;\" id=\"dias-info\"></small></div></div><script>frappe.call({method: 'planillaventasyegresos.planilla_de_ventas_y_egresos.doctype.caja_diaria.caja_diaria.get_weekly_summary', callback: (r) => {if (r.message) {const data = r.message; document.getElementById('ventas-total').textContent = frappe.format(data.total_ventas, {fieldtype: 'Currency'}); document.getElementById('egresos-total').textContent = frappe.format(data.total_egresos, {fieldtype: 'Currency'}); document.getElementById('saldo-neto').textContent = frappe.format(data.saldo_neto, {fieldtype: 'Currency'}); document.getElementById('week-range').textContent = `${data.fecha_inicio} - ${data.fecha_fin}`; document.getElementById('dias-info').textContent = `${data.dias_registrados} días registrados`;}}})</script>"
-  }
- ],
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
  "icon": "octicon octicon-file-directory",
- "idx": 0,
+ "idx": 1,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Planillas",
@@ -29,8 +25,8 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-09 22:15:34.214756",
- "modified_by": "guzmanbrunonicolas@gmail.com",
+ "modified": "2026-05-16 05:46:51.977127",
+ "modified_by": "Administrator",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
  "number_cards": [],

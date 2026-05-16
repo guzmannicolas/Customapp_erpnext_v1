@@ -17,29 +17,53 @@ class CajaDiaria(Document):
 		self.saldo_final = self.total_ventas - self.total_egresos
 
 
-@frappe.whitelist()
-def get_weekly_summary():
+def _get_week_range():
 	today = datetime.now().date()
-	weekday = today.weekday()
-	monday = today - timedelta(days=weekday)
+	monday = today - timedelta(days=today.weekday())
 	sunday = monday + timedelta(days=6)
+	return monday, sunday
 
-	cajas = frappe.get_list(
+
+def _get_cajas_semana():
+	monday, sunday = _get_week_range()
+	return frappe.get_list(
 		"Caja Diaria",
 		fields=["total_ventas", "total_egresos", "saldo_final"],
 		filters=[["fecha", ">=", monday], ["fecha", "<=", sunday]],
-		order_by="fecha asc"
 	)
 
-	total_ventas = sum(caja.get("total_ventas", 0) for caja in cajas)
-	total_egresos = sum(caja.get("total_egresos", 0) for caja in cajas)
-	saldo_neto = total_ventas - total_egresos
 
+@frappe.whitelist()
+def get_ventas_semanales():
+	cajas = _get_cajas_semana()
+	return {"value": sum(c.get("total_ventas", 0) for c in cajas), "fieldtype": "Currency"}
+
+
+@frappe.whitelist()
+def get_egresos_semanales():
+	cajas = _get_cajas_semana()
+	return {"value": sum(c.get("total_egresos", 0) for c in cajas), "fieldtype": "Currency"}
+
+
+@frappe.whitelist()
+def get_saldo_semanal():
+	cajas = _get_cajas_semana()
+	ventas = sum(c.get("total_ventas", 0) for c in cajas)
+	egresos = sum(c.get("total_egresos", 0) for c in cajas)
+	return {"value": ventas - egresos, "fieldtype": "Currency"}
+
+
+@frappe.whitelist()
+def get_weekly_summary():
+	cajas = _get_cajas_semana()
+	monday, sunday = _get_week_range()
+	total_ventas = sum(c.get("total_ventas", 0) for c in cajas)
+	total_egresos = sum(c.get("total_egresos", 0) for c in cajas)
 	return {
 		"total_ventas": total_ventas,
 		"total_egresos": total_egresos,
-		"saldo_neto": saldo_neto,
+		"saldo_neto": total_ventas - total_egresos,
 		"fecha_inicio": monday.strftime("%d/%m"),
 		"fecha_fin": sunday.strftime("%d/%m"),
-		"dias_registrados": len(cajas)
+		"dias_registrados": len(cajas),
 	}
