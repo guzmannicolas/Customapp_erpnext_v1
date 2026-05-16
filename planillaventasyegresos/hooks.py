@@ -6,6 +6,10 @@ app_email = "info@zepe.com"
 app_license = "mit"
 # required_apps = []
 
+fixtures = [
+    {"dt": "Workspace", "filters": [["name", "in", ["Planillas"]]]}
+]
+
 # Includes in <head>
 # ------------------
 
