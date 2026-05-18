@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"h0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Esta Semana</span>\", \"col\": 12}}, {\"id\": \"nc1\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Ventas Esta Semana\", \"col\": 4}}, {\"id\": \"nc2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Egresos Esta Semana\", \"col\": 4}}, {\"id\": \"nc3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Saldo Esta Semana\", \"col\": 4}}, {\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Accesos Rapidos</span>\", \"col\": 12}}, {\"id\": \"s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nueva Caja\", \"col\": 3}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Listado de Cajas\", \"col\": 3}}, {\"id\": \"wqXhLrA9wm\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grafico Ventas por Sucursal\", \"col\": 3}}]",
+ "content": "[{\"id\": \"h0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Esta Semana</span>\", \"col\": 12}}, {\"id\": \"nc1\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Ventas Esta Semana\", \"col\": 4}}, {\"id\": \"nc2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Egresos Esta Semana\", \"col\": 4}}, {\"id\": \"nc3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Saldo Esta Semana\", \"col\": 4}}, {\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Accesos Rapidos</span>\", \"col\": 12}}, {\"id\": \"s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nueva Caja\", \"col\": 3}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Listado de Cajas\", \"col\": 3}}, {\"id\": \"s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grafico Ventas por Sucursal\", \"col\": 3}}]",
  "creation": "2026-05-09 04:02:50.831636",
  "custom_blocks": [],
  "docstatus": 0,
@@ -25,8 +25,8 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-16 06:09:22.902223",
- "modified_by": "Administrator",
+ "modified": "2026-05-17 23:16:50.672117",
+ "modified_by": "guzmanbrunonicolas@gmail.com",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
  "number_cards": [
@@ -52,9 +52,9 @@
  "sequence_id": 1.0,
  "shortcuts": [
   {
-   "color": "Green",
+   "color": "#29CD42",
    "doc_view": "New",
-   "icon": "es-line-add-circle",
+   "icon": "",
    "label": "Nueva Caja",
    "link_to": "Caja Diaria",
    "type": "DocType"
