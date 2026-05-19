@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accesos Rapidos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"wqXhLrA9wm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grafico Ventas por Sucursal\",\"col\":3}}]",
+ "content": "[{\"id\": \"h0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Esta Semana</span>\", \"col\": 12}}, {\"id\": \"nc1\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Ventas Esta Semana\", \"col\": 4}}, {\"id\": \"nc2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Egresos Esta Semana\", \"col\": 4}}, {\"id\": \"nc3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Saldo Esta Semana\", \"col\": 4}}, {\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Accesos Rapidos</span>\", \"col\": 12}}, {\"id\": \"s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nueva Caja\", \"col\": 3}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Listado de Cajas\", \"col\": 3}}, {\"id\": \"s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grafico Ventas por Sucursal\", \"col\": 3}}]",
  "creation": "2026-05-09 04:02:50.831636",
  "custom_blocks": [],
  "docstatus": 0,
@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "octicon octicon-file-directory",
- "idx": 0,
+ "idx": 1,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Planillas",
@@ -25,11 +25,21 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-09 22:15:34.214756",
+ "modified": "2026-05-17 23:16:50.672117",
  "modified_by": "guzmanbrunonicolas@gmail.com",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
- "number_cards": [],
+ "number_cards": [
+  {
+   "number_card_name": "Ventas Esta Semana"
+  },
+  {
+   "number_card_name": "Egresos Esta Semana"
+  },
+  {
+   "number_card_name": "Saldo Esta Semana"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -42,23 +52,28 @@
  "sequence_id": 1.0,
  "shortcuts": [
   {
+   "color": "#29CD42",
    "doc_view": "New",
+   "icon": "",
    "label": "Nueva Caja",
    "link_to": "Caja Diaria",
    "type": "DocType"
   },
   {
-   "color": "Grey",
+   "color": "Blue",
    "doc_view": "List",
-   "label": "Grafico Ventas por Sucursal",
-   "link_to": "Ventas por Sucursal y D\u00eda",
-   "type": "Report"
-  },
-  {
-   "doc_view": "List",
+   "icon": "es-line-bullet-list",
    "label": "Listado de Cajas",
    "link_to": "Caja Diaria",
    "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "icon": "es-line-chart",
+   "label": "Grafico Ventas por Sucursal",
+   "link_to": "Ventas por Sucursal y D\u00eda",
+   "type": "Report"
   }
  ],
  "title": "Planillas"

@@ -6,11 +6,15 @@ app_email = "info@zepe.com"
 app_license = "mit"
 # required_apps = []
 
+fixtures = [
+    {"dt": "Workspace", "filters": [["name", "in", ["Planillas"]]]}
+]
+
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/planillaventasyegresos/css/planillaventasyegresos.css"
+app_include_css = "/assets/planillaventasyegresos/css/planillaventasyegresos.css"
 # app_include_js = "/assets/planillaventasyegresos/js/planillaventasyegresos.js"
 
 # include js, css files in header of web template

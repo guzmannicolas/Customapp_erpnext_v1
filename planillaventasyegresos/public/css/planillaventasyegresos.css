@@ -1,0 +1,4 @@
+.page-body[data-route*="Ventas por Sucursal"] .chart-container,
+.frappe-report .chart-container {
+    overflow: visible !important;
+}
