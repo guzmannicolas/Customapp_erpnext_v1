@@ -9,3 +9,6 @@ __pycache__
 .env.local
 .idea/
 .vscode/
+
+# symlink recursivo que crea `bench build` por error dentro de public/ (ver skills/bench_build_assets.md)
+planillaventasyegresos/public/public
