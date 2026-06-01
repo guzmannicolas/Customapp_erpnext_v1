@@ -172,8 +172,9 @@
    "fieldname": "medio_pago",
    "fieldtype": "Select",
    "label": "Medio de Pago",
-   "depends_on": "eval:['Gastos Generales','Aportes Obra Social','Pagos ARCA','Retiros','Imp. Provincial'].includes(doc.concepto)",
-   "options": "Efectivo\nTransferencia\nMercado Pago\nCheque\nD\u00e9bito\nTarjeta"
+   "depends_on": "eval:!['Pagos Cheques Bco','Pago Cuotas Pr\u00e9stamos Bco'].includes(doc.concepto)",
+   "mandatory_depends_on": "eval:!['Pagos Cheques Bco','Pago Cuotas Pr\u00e9stamos Bco'].includes(doc.concepto)",
+   "options": "Transferencia\nEfectivo\nMercado Pago\nCheque\nTarjeta de D\u00e9bito\nTarjeta de Cr\u00e9dito"
   },
   {
    "fieldname": "adelanto_efectivo",
@@ -212,7 +213,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-31 11:00:00.000000",
+ "modified": "2026-06-01 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Planilla de Ventas y Egresos",
  "name": "Detalle Egresos Caja",

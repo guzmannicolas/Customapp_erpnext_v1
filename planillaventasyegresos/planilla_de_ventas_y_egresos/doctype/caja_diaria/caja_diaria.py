@@ -63,6 +63,17 @@ def _resolve_rango(rango):
 
 
 @frappe.whitelist()
+def get_total_disponible():
+	row = frappe.db.sql("""
+		SELECT COALESCE(SUM(total_ventas), 0) AS ventas,
+		       COALESCE(SUM(total_egresos), 0) AS egresos
+		FROM `tabCaja Diaria`
+		WHERE docstatus < 2
+	""", as_dict=True)[0]
+	return {"value": (row.ventas or 0) - (row.egresos or 0), "fieldtype": "Currency"}
+
+
+@frappe.whitelist()
 def get_ventas_semanales():
 	cajas = _get_cajas_semana()
 	return {"value": sum(c.get("total_ventas", 0) for c in cajas), "fieldtype": "Currency"}

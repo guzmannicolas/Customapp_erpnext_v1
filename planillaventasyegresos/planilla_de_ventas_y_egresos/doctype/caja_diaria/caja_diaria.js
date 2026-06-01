@@ -6,6 +6,12 @@ frappe.ui.form.on("Caja Diaria", {
 });
 
 frappe.ui.form.on("Detalle Egresos Caja", {
+	egresos_add: function(frm, cdt, cdn) {
+		setTimeout(function() {
+			var row = frm.fields_dict["egresos"].grid.grid_rows_by_docname[cdn];
+			if (row) row.toggle_view(true);
+		}, 100);
+	},
 	monto: calcular_totales,
 	egresos_remove: calcular_totales,
 	serv_agua: sumar_servicios,

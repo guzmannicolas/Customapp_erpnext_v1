@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"h0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Esta Semana</span>\",\"col\":12}},{\"id\":\"HdIDUpmRnO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ventas\",\"col\":4}},{\"id\":\"EgJrAZdXvn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Egresos\",\"col\":4}},{\"id\":\"nV8dVUL6vC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Saldo Final\",\"col\":4}},{\"id\":\"hd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Por D\u00eda</span>\",\"col\":12}},{\"id\":\"CuJW6LFPV4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ventas\",\"col\":4}},{\"id\":\"HAVmwVaD4q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Egresos\",\"col\":4}},{\"id\":\"LK2piXF19f\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Saldo Final\",\"col\":4}},{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accesos Rapidos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"hr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reportes</span>\",\"col\":12}},{\"id\":\"sr1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reporte General\",\"col\":3}},{\"id\":\"sr2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Egresos por Concepto\",\"col\":3}},{\"id\":\"sr3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ventas por Local y Mes\",\"col\":3}},{\"id\":\"sr4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Libro de Caja\",\"col\":3}}]",
- "creation": "2026-05-31 23:33:18.115656",
+ "content": "[{\"id\":\"h0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Esta Semana</span>\",\"col\":12}},{\"id\":\"HdIDUpmRnO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ventas Esta Semana\",\"col\":3}},{\"id\":\"EgJrAZdXvn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Egresos Esta Semana\",\"col\":3}},{\"id\":\"nV8dVUL6vC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Saldo Esta Semana\",\"col\":3}},{\"id\":\"efH70sW8uG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Historico\",\"col\":3}},{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Ventas y Egresos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"hr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reportes</span>\",\"col\":12}},{\"id\":\"sr1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reporte General\",\"col\":3}},{\"id\":\"sr2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Egresos por Concepto\",\"col\":3}},{\"id\":\"sr3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ventas por Local y Mes\",\"col\":3}},{\"id\":\"sr4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Libro de Caja\",\"col\":3}}]",
+ "creation": "2026-06-01 03:15:25.896586",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -25,22 +25,26 @@
    "type": "Link"
   }
  ],
- "modified": "2026-06-01 01:29:36.194756",
+ "modified": "2026-06-01 03:32:50.666866",
  "modified_by": "guzmanbrunonicolas@gmail.com",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
  "number_cards": [
   {
-   "label": "Ventas",
-   "number_card_name": "Ventas Hoy"
+   "label": "Ventas Esta Semana",
+   "number_card_name": "Ventas Esta Semana"
   },
   {
-   "label": "Egresos",
-   "number_card_name": "Egresos Hoy"
+   "label": "Total Historico",
+   "number_card_name": "Total Disponible"
   },
   {
-   "label": "Saldo Final",
-   "number_card_name": "Saldo Hoy"
+   "label": "Egresos Esta Semana",
+   "number_card_name": "Egresos Esta Semana"
+  },
+  {
+   "label": "Saldo Esta Semana",
+   "number_card_name": "Saldo Esta Semana"
   }
  ],
  "owner": "Administrator",

@@ -1,4 +1,4 @@
-frappe.query_reports["Ventas por Sucursal y Día"] = {
+frappe.query_reports["Reporte General"] = {
 	filters: [
 		{
 			fieldname: "periodo",
