@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\": \"h0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Esta Semana</span>\", \"col\": 12}}, {\"id\": \"nc1\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Ventas Esta Semana\", \"col\": 4}}, {\"id\": \"nc2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Egresos Esta Semana\", \"col\": 4}}, {\"id\": \"nc3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Saldo Esta Semana\", \"col\": 4}}, {\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Accesos Rapidos</span>\", \"col\": 12}}, {\"id\": \"s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nueva Caja\", \"col\": 3}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Listado de Cajas\", \"col\": 3}}, {\"id\": \"s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grafico Ventas por Sucursal\", \"col\": 3}}]",
- "creation": "2026-05-09 04:02:50.831636",
+ "content": "[{\"id\":\"h0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Esta Semana</span>\",\"col\":12}},{\"id\":\"HdIDUpmRnO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ventas\",\"col\":4}},{\"id\":\"EgJrAZdXvn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Egresos\",\"col\":4}},{\"id\":\"nV8dVUL6vC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Saldo Final\",\"col\":4}},{\"id\":\"hd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Por D\u00eda</span>\",\"col\":12}},{\"id\":\"CuJW6LFPV4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Ventas\",\"col\":4}},{\"id\":\"HAVmwVaD4q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Egresos\",\"col\":4}},{\"id\":\"LK2piXF19f\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Saldo Final\",\"col\":4}},{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accesos Rapidos</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nueva Caja\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Listado de Cajas\",\"col\":3}},{\"id\":\"hr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reportes</span>\",\"col\":12}},{\"id\":\"sr1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reporte General\",\"col\":3}},{\"id\":\"sr2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Egresos por Concepto\",\"col\":3}},{\"id\":\"sr3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ventas por Local y Mes\",\"col\":3}},{\"id\":\"sr4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Libro de Caja\",\"col\":3}}]",
+ "creation": "2026-05-31 23:33:18.115656",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -25,19 +25,22 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-17 23:16:50.672117",
+ "modified": "2026-06-01 01:29:36.194756",
  "modified_by": "guzmanbrunonicolas@gmail.com",
  "module": "Planilla de Ventas y Egresos",
  "name": "Planillas",
  "number_cards": [
   {
-   "number_card_name": "Ventas Esta Semana"
+   "label": "Ventas",
+   "number_card_name": "Ventas Hoy"
   },
   {
-   "number_card_name": "Egresos Esta Semana"
+   "label": "Egresos",
+   "number_card_name": "Egresos Hoy"
   },
   {
-   "number_card_name": "Saldo Esta Semana"
+   "label": "Saldo Final",
+   "number_card_name": "Saldo Hoy"
   }
  ],
  "owner": "Administrator",
@@ -60,6 +63,14 @@
    "type": "DocType"
   },
   {
+   "color": "Orange",
+   "doc_view": "",
+   "icon": "es-line-chart",
+   "label": "Reporte General",
+   "link_to": "Ventas por Sucursal y D\u00eda",
+   "type": "Report"
+  },
+  {
    "color": "Blue",
    "doc_view": "List",
    "icon": "es-line-bullet-list",
@@ -68,11 +79,27 @@
    "type": "DocType"
   },
   {
-   "color": "Orange",
+   "color": "Red",
+   "doc_view": "",
+   "icon": "es-line-filter",
+   "label": "Egresos por Concepto",
+   "link_to": "Egresos por Concepto",
+   "type": "Report"
+  },
+  {
+   "color": "Blue",
    "doc_view": "",
    "icon": "es-line-chart",
-   "label": "Grafico Ventas por Sucursal",
-   "link_to": "Ventas por Sucursal y D\u00eda",
+   "label": "Ventas por Local y Mes",
+   "link_to": "Ventas por Local y Mes",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "es-line-bullet-list",
+   "label": "Libro de Caja",
+   "link_to": "Libro de Caja",
    "type": "Report"
   }
  ],

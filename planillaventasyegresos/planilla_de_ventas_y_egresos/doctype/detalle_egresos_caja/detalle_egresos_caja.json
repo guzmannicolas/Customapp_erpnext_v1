@@ -7,46 +7,212 @@
  "engine": "InnoDB",
  "field_order": [
   "concepto",
+  "local_egreso",
+  "tipo_gasto",
+  "serv_agua",
+  "serv_luz",
+  "serv_gas",
+  "serv_internet",
+  "tipo_arca",
+  "detalle_municipio",
+  "estado_cheque",
+  "nro_patente",
+  "nro_cheque",
+  "fecha_creacion_cheque",
+  "plan_nro",
+  "persona",
+  "banco",
+  "tarjeta",
+  "detalle_banco",
+  "concepto_aporte",
+  "nro_partida",
+  "ubicacion",
+  "medio_pago",
+  "adelanto_efectivo",
   "detalle_referencia",
   "fecha_vto",
+  "fecha_pago",
   "monto"
  ],
  "fields": [
   {
-   "columns": 3,
    "fieldname": "concepto",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Concepto",
-   "options": "Gastos Generales\nSueldos\nAportes Obra Social\nPagos ARCA\nCuotas de ARCA\nCuotas de ARBA\nCuotas de Municipio\nPatentes de Autos\nPagos Alquileres\nPagos Cheques Bco\nGastos Bancarios\nPago Cuotas Préstamos Bco\nRetiros"
+   "in_list_view": 1,
+   "columns": 4,
+   "options": "Gastos Generales\nSueldos\nAportes Obra Social\nPagos ARCA\nCuotas de ARCA\nCuotas de ARBA\nCuotas de Municipio\nPatentes de Autos\nPagos Alquileres\nPagos Cheques Bco\nGastos Bancarios\nPago Cuotas Pr\u00e9stamos Bco\nRetiros\nImp. Provincial"
   },
   {
-   "columns": 3,
+   "fieldname": "local_egreso",
+   "fieldtype": "Select",
+   "label": "Local",
+   "options": "CENTRAL\nGRAND BOURG\nJOSE C. PAZ\nSAN MIGUEL\nPILAR\nDEP\u00d3SITO",
+   "depends_on": "eval:doc.concepto=='Pagos Alquileres'"
+  },
+  {
+   "fieldname": "tipo_gasto",
+   "fieldtype": "Select",
+   "label": "Tipo de Gasto",
+   "depends_on": "eval:doc.concepto=='Gastos Generales'",
+   "options": "Servicios\nAlquiler\nNafta\nComida\nPapeler\u00eda\nExtras"
+  },
+  {
+   "fieldname": "serv_agua",
+   "fieldtype": "Currency",
+   "label": "Agua",
+   "depends_on": "eval:doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Servicios'"
+  },
+  {
+   "fieldname": "serv_luz",
+   "fieldtype": "Currency",
+   "label": "Luz",
+   "depends_on": "eval:doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Servicios'"
+  },
+  {
+   "fieldname": "serv_gas",
+   "fieldtype": "Currency",
+   "label": "Gas",
+   "depends_on": "eval:doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Servicios'"
+  },
+  {
+   "fieldname": "serv_internet",
+   "fieldtype": "Currency",
+   "label": "Internet",
+   "depends_on": "eval:doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Servicios'"
+  },
+  {
+   "fieldname": "tipo_arca",
+   "fieldtype": "Select",
+   "label": "Tipo",
+   "depends_on": "eval:doc.concepto=='Pagos ARCA'",
+   "options": "IVA\nGanancias\nIIBB\nMonotributo\nAut\u00f3nomos\nOtros"
+  },
+  {
+   "fieldname": "detalle_municipio",
+   "fieldtype": "Select",
+   "label": "Detalle",
+   "depends_on": "eval:doc.concepto=='Cuotas de Municipio'",
+   "options": "Aportes Seg. e Higiene\nCuota municipal\nP. Propaganda"
+  },
+  {
+   "fieldname": "estado_cheque",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "depends_on": "eval:doc.concepto=='Pagos Cheques Bco'",
+   "options": "A pagar\nPagado"
+  },
+  {
+   "fieldname": "nro_patente",
+   "fieldtype": "Data",
+   "label": "N\u00ba Patente",
+   "depends_on": "eval:doc.concepto=='Patentes de Autos'"
+  },
+  {
+   "fieldname": "nro_cheque",
+   "fieldtype": "Data",
+   "label": "N\u00ba Cheque",
+   "depends_on": "eval:doc.concepto=='Pagos Cheques Bco'"
+  },
+  {
+   "fieldname": "fecha_creacion_cheque",
+   "fieldtype": "Date",
+   "label": "Fecha Creaci\u00f3n Cheque",
+   "depends_on": "eval:doc.concepto=='Pagos Cheques Bco'"
+  },
+  {
+   "fieldname": "plan_nro",
+   "fieldtype": "Data",
+   "label": "Plan N\u00ba",
+   "depends_on": "eval:doc.concepto=='Pago Cuotas Pr\u00e9stamos Bco'"
+  },
+  {
+   "fieldname": "persona",
+   "fieldtype": "Data",
+   "label": "Persona / Nombre",
+   "depends_on": "eval:['Sueldos','Retiros','Pagos Cheques Bco'].includes(doc.concepto)"
+  },
+  {
+   "fieldname": "banco",
+   "fieldtype": "Data",
+   "label": "Banco",
+   "depends_on": "eval:['Sueldos','Gastos Bancarios','Pago Cuotas Pr\u00e9stamos Bco'].includes(doc.concepto)"
+  },
+  {
+   "fieldname": "tarjeta",
+   "fieldtype": "Data",
+   "label": "Tarjeta",
+   "depends_on": "eval:doc.concepto=='Gastos Bancarios'"
+  },
+  {
+   "fieldname": "detalle_banco",
+   "fieldtype": "Data",
+   "label": "Detalle Banco",
+   "depends_on": "eval:doc.concepto=='Gastos Bancarios'"
+  },
+  {
+   "fieldname": "concepto_aporte",
+   "fieldtype": "Data",
+   "label": "Concepto",
+   "depends_on": "eval:doc.concepto=='Aportes Obra Social'"
+  },
+  {
+   "fieldname": "nro_partida",
+   "fieldtype": "Data",
+   "label": "N\u00ba de Partida",
+   "depends_on": "eval:doc.concepto=='Imp. Provincial'"
+  },
+  {
+   "fieldname": "ubicacion",
+   "fieldtype": "Data",
+   "label": "Ubicaci\u00f3n",
+   "depends_on": "eval:doc.concepto=='Imp. Provincial'"
+  },
+  {
+   "fieldname": "medio_pago",
+   "fieldtype": "Select",
+   "label": "Medio de Pago",
+   "depends_on": "eval:['Gastos Generales','Aportes Obra Social','Pagos ARCA','Retiros','Imp. Provincial'].includes(doc.concepto)",
+   "options": "Efectivo\nTransferencia\nMercado Pago\nCheque\nD\u00e9bito\nTarjeta"
+  },
+  {
+   "fieldname": "adelanto_efectivo",
+   "fieldtype": "Currency",
+   "label": "Adelanto Efectivo",
+   "depends_on": "eval:doc.concepto=='Sueldos'"
+  },
+  {
    "fieldname": "detalle_referencia",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Detalle / Referencia"
+   "label": "Detalle",
+   "depends_on": "eval:['Pagos Alquileres','Pagos ARCA','Cuotas de ARCA','Cuotas de ARBA','Retiros','Pago Cuotas Pr\u00e9stamos Bco'].includes(doc.concepto) || (doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Extras')"
   },
   {
-   "columns": 2,
    "fieldname": "fecha_vto",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Fecha Vto"
+   "label": "Fecha Vto",
+   "depends_on": "eval:['Cuotas de Municipio','Patentes de Autos','Pagos Cheques Bco'].includes(doc.concepto)"
   },
   {
-   "columns": 2,
+   "fieldname": "fecha_pago",
+   "fieldtype": "Date",
+   "label": "Fecha de Pago",
+   "depends_on": "eval:['Cuotas de ARCA','Cuotas de ARBA'].includes(doc.concepto)"
+  },
+  {
    "fieldname": "monto",
    "fieldtype": "Currency",
-   "in_list_view": 1,
    "label": "Monto",
-   "reqd": 1
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 2,
+   "read_only_depends_on": "eval:doc.concepto=='Gastos Generales' && doc.tipo_gasto=='Servicios'"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-09 00:00:00.000000",
+ "modified": "2026-05-31 11:00:00.000000",
  "modified_by": "Administrator",
  "module": "Planilla de Ventas y Egresos",
  "name": "Detalle Egresos Caja",
